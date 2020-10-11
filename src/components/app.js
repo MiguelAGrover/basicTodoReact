@@ -51,6 +51,12 @@ class App extends Component  {
       }); 
     } 
   } 
+
+  handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      this.addItem()
+    }
+  }
   
   // Function to delete item from list use id to delete 
   deleteItem(key){ 
@@ -91,6 +97,7 @@ class App extends Component  {
             onChange = {item => this.updateInput(item.target.value)} 
             aria-label="add something"
             aria-describedby="basic-addon2"
+            onKeyPress = {this.handleKeyPress}
           /> 
           <InputGroup.Append> 
             <Button 
